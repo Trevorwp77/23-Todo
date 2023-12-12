@@ -22,7 +22,7 @@ export class LoginComponent {
     // console.log(this.username);
     // console.log(this.password);
     if(this.username=== "Tpainmcain" && this.password=== "asd123"){
-      this.router.navigate(['welcome'])
+      this.router.navigate(['welcome', this.username])
       this.invalidLogin = false
     } else {
       this.invalidLogin = true
