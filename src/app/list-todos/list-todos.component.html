@@ -1,0 +1,23 @@
+<table border="1">
+    <!-- Table container with a border -->
+    <caption>My Todo's</caption> <!-- Table caption/title -->
+
+    <thead>
+        <!-- Table header section -->
+        <tr>
+            <!-- Table row for headers -->
+            <th>id</th> <!-- Header cell: 'id' column -->
+            <th>description</th> <!-- Header cell: 'description' column -->
+        </tr>
+    </thead>
+
+    <tbody>
+        <!-- Table body section -->
+        <tr *ngFor="let todo of todos">
+            <!-- Angular directive to loop over todos array. Each iteration creates a new table row for a todo item -->
+            <td>{{todo.id}}</td> <!-- Data cell: Dynamic content for 'id' from todo item -->
+            <td>{{todo.description}}</td> <!-- Data cell: Dynamic content for 'description' from todo item -->
+        </tr>
+        <!-- Additional rows will be automatically added by the *ngFor directive based on the number of items in the todos array -->
+    </tbody>
+</table>
