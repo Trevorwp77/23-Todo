@@ -16,4 +16,6 @@ export class LogoutComponent implements OnInit {
      this.hardcodedAuthenticationService.logout();
   }
 
+
+  //
 }
