@@ -5,13 +5,14 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { ErrorComponent } from './error/error.component';
 import { ListTodosComponent } from './list-todos/list-todos.component';
 import { LogoutComponent } from './logout/logout.component';
+import { routeGuardService } from './service/route-guard.service';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'welcome/:name', component: WelcomeComponent },
-  { path: 'todos', component: ListTodosComponent },
-  { path: 'logout', component: LogoutComponent },
+  { path: 'welcome/:name', component: WelcomeComponent, canActivate: [routeGuardService] },
+  { path: 'todos', component: ListTodosComponent, canActivate: [routeGuardService] },
+  { path: 'logout', component: LogoutComponent, canActivate: [routeGuardService] },
 
   { path: '**', component: ErrorComponent }
 ];
@@ -21,3 +22,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
